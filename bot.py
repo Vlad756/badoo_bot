@@ -12,9 +12,9 @@ class BadooBot():
         login_passw = self.driver.find_elements_by_class_name(
             'text-field__input')
         login_passw[0].clear()
-        login_passw[0].send_keys('v.chelyadin2015@yandex.ru')
+        login_passw[0].send_keys('LOGIN')
         login_passw[1].clear()
-        login_passw[1].send_keys('Vlad756166vlad')
+        login_passw[1].send_keys('PASSWORD')
         sign_in = self.driver.find_element_by_name('post')
         sign_in.click()
         time.sleep(5)
