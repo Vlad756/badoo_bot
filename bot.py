@@ -43,6 +43,18 @@ class BadooBot():
         close_x.click()
         time.sleep(1)
 
+    def close_match(self):
+        pass
+        # close_match = self.driver.find_element_by_id()
+        # close_match.click()
+        # time.sleep(1)
+
+    def send_hello(self):
+        pass
+        # message_line = self.driver.find_element_by_id()
+        # message_line.clear()
+        # message_line.send_keys('Привет :)')
+
     def auto_like(self):
         while True:
             try:
@@ -51,7 +63,16 @@ class BadooBot():
                 try:
                     self.close_pop()
                 except Exception:
-                    self.close_x()
+                    try:
+                        self.close_x()
+                    except Exception:
+                        try:
+                            self.send_hello()
+                            self.close_match()
+                        except Exception:
+                            assert "Расширить критерии поиска" in self.driver.body
+                            break
+        print('DONE!!!')
 
 
 # if __name__ == '__main__':
